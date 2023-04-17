@@ -16,6 +16,7 @@ server.on('request', (req, res) => {
       if (pathname.includes('/')) {
         res.statusCode = 400;
         res.end('Directories not allowed');
+        return;
       }
 
       const readStream = fs.createReadStream(filepath);
